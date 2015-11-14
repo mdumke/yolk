@@ -4,7 +4,6 @@ $color-tertiary: #7c0000
 
 body
   background-color: $color-secondary
-  color: $color-primary
   font: 12px/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 h2
@@ -17,12 +16,14 @@ h3
   @extend h2
   font-size: 140%
 
-a
-  color: $color-primary
-
 a:hover
-  color: $color-primary
   text-decoration: none
+
+.full-width
+  width: 100%
+
+.show-left-border
+  border-left: 1px solid #ccc
 
 .farm-container
   padding-top: 15px
@@ -32,3 +33,43 @@ a:hover
   border-bottom: 5px double #ddd
   margin-bottom: 20px
 
+.create-account-box
+  background: $color-secondary url('/assets/farm.gif')
+  background-size: 100% 100%
+  text-align: center
+  padding: 15px 0
+  border-radius: 5px
+  margin-bottom: 15px
+  border: 1px solid #ccc
+
+  h2
+    color: $color-primary
+    font-size: 160%
+
+  p
+    color: #333
+
+  a
+    margin-top: 30px
+
+.ybtn
+  a
+    color: white
+    text-decoration: none
+
+  color: white
+  border: 1px solid #7b0000
+  margin: 0 0 6px 0
+  padding: 7px 16px
+  font-size: 14px
+  line-height: 18px
+  border-radius: 3px
+  border-color: rgba(0,0,0,0.2)
+  border-radius: 4px
+  display: inline-block
+  background-image: -webkit-linear-gradient(#be0100 4%, #a20000 5%, #7c0000 100%)
+  background-image: linear-gradient(#be0100 4%, #a20000 5%, #7c0000 100%)
+
+.light
+  background-image: -webkit-linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04 100%)
+  background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04 100%)
