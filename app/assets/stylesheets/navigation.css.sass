@@ -1,6 +1,7 @@
 $color-primary: #c41200
 $color-secondary: #F5F5F1
 $color-tertiary: #7c0000
+$yolk: rgb(253, 203, 0)
 
 nav
   padding: 15px 0 10px 0
@@ -11,13 +12,26 @@ nav
 
   a
     color: white
+  a:hover
+    color: white
 
   .sign-up,
   .sign-in
     text-align: center
     font-size: 14px
 
+  .logo
+    font-size: 350%
+    position: relative
+    text-shadow: 2px 0 0 $yolk, -2px 0 0 $yolk, 0 2px 0 $yolk, 0 -2px 0 $yolk, 1px 1px 0 $yolk, -1px -1px 0 $yolk, 1px -1px 0 $yolk, -1px 1px 0 $yolk
+
   .yolk
-    color: $color-tertiary
-    font-size: 160%
+    position: absolute
+    top: -5px
+    left: 94px
+    width: 40px
+    height: 40px
+    background-color: $yolk
+    border-radius: 50%
+    z-index: -1
 
