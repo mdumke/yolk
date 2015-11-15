@@ -1,0 +1,34 @@
+%nav
+  .row
+    .small-12.medium-10.medium-centered.columns.full-width
+      .left
+        .logo
+          yolk
+        .yolk
+
+.row
+  .small-12.medium-10.medium-centered.columns.full-width
+    .row
+      .small-4.small-offset1.columns.sign-up-form
+        %header
+          %h2 Sign up for yolk
+          %p Connect with great local farms
+
+        %form{:action => "/signup", :method => "POST"}
+          %input{:name => "first_name", :placeholder => "First Name", :required => "required", :type => "text", :value => ""}/
+          %input{:name => "last_name", :placeholder => "Last Name", :required => "required", :type => "text", :value => ""}/
+          %input{:name => "email", :placeholder => "Email", :required => "required", :type => "email", :value => ""}/
+          %input{:name => "password", :placeholder => "Password", :required => "required", :type => "password", :value => ""}/
+
+          %p.sign-up-legal
+            By creating an account, you agree to Yelp’s (!)
+            %a{:href => "http://www.yelp.com/static?p=tos"} Terms of Service
+            and
+            %a{:href => "http://wwwo.yelp.com/tos/privacy_en_us_20150504"} Privacy Policy
+
+          %button.ybtn.light.sign-up-button{:type => "submit", :value => "Sign Up"}
+            %span Sign Up
+
+      .small-4.small-offset-2.end.columns
+        %img.sign-up-image{src: image_url('barn.gif'), alt: 'welcome image'}
+
