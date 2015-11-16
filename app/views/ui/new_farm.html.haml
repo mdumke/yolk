@@ -1,0 +1,44 @@
+%nav
+  .row
+    .small-12.medium-10.medium-centered.columns.full-width
+      .left
+        .logo
+          yolk
+
+      .right.nav-button
+        %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} Hypochonder &raquo;
+        %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+          %li
+            %a{:href => "#"} profile (edit)
+          %li
+            %a{:href => "#"} logout
+
+      .right.nav-button
+        %a.ybtn
+          Add new Farm
+
+      .right.nav-option
+        %a
+          Reviews
+
+      .right.nav-option
+        %a
+          Farms
+
+.row
+  .small-12.medium-10.medium-centered.columns.main-container.full-width
+    .row
+      .small-6.small-centered.columns
+        %header
+          %h2
+            Add a new Farm to our list
+
+        %form{:action => "/create", :method => "POST"}
+          %input{:name => "farm_name", :placeholder => "Farm Name", :required => "required", :type => "text", :value => ""}/
+          %input{:name => "street", :placeholder => "Street", :required => "required", :type => "text", :value => ""}/
+          %input{:name => "zip", :placeholder => "ZIP", :required => "required", :type => "text", :value => ""}/
+          %input{:name => "city", :placeholder => "City", :required => "required", :type => "text", :value => ""}/
+          %input{:name => "country", :placeholder => "Country", :required => "required", :type => "text", :value => ""}/
+          %input.ybtn.full-width{type: 'submit', value: 'Add this Farm'}
+
+
