@@ -5,13 +5,25 @@
         .logo
           yolk
 
-      .right
-        %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} Hypochonder
+      .right.nav-button
+        %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} Hypochonder &raquo;
         %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
           %li
             %a{:href => "#"} profile (edit)
           %li
             %a{:href => "#"} logout
+
+      .right.nav-button
+        %a.ybtn
+          Add new Farm
+
+      .right.nav-option
+        %a
+          Reviews
+
+      .right.nav-option
+        %a
+          Farms
 
 .row
   .small-12.medium-10.medium-centered.columns.main-container.full-width
