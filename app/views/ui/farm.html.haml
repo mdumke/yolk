@@ -1,0 +1,87 @@
+%nav
+  .row
+    .small-12.medium-10.medium-centered.columns.full-width
+      .left
+        .logo
+          yolk
+        .yolk
+
+      .right
+        %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} Hypochonder
+        %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+          %li
+            %a{:href => "#"} profile (edit)
+          %li
+            %a{:href => "#"} logout
+
+.row
+  .small-12.medium-10.medium-centered.columns.main-container.full-width
+    .row
+      .small-8.columns
+        %header.form-box.double-border-bottom
+          %h2
+            Add a review
+
+          %form
+            %label Rating
+            %input{type: 'radio', name: 'rating', value: '1', id: 'rating1'}
+            %label{for: 'rating1'}
+              1
+            %input{type: 'radio', name: 'rating', value: '2', id: 'rating2'}
+            %label{for: 'rating2'}
+              2
+            %input{type: 'radio', name: 'rating', value: '3', id: 'rating3'}
+            %label{for: 'rating3'}
+              3
+            %input{type: 'radio', name: 'rating', value: '4', id: 'rating4'}
+            %label{for: 'rating4'}
+              4
+            %input{type: 'radio', name: 'rating', value: '5', id: 'rating5'}
+            %label{for: 'rating5'}
+              5
+
+            %label Review
+            %textarea{rows: 6}
+
+            %input.ybtn.full-width{type: 'submit', value: 'Create Review'}
+
+        %h2
+          Here's what other people have said about
+          %a
+            Mary's Little Lamb
+        %br
+
+        %article.review
+          %p
+            %a Johanna:
+            Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
+            %strong (3/5)
+
+        %hr
+
+        %article.review
+          %p
+            %a Johanna:
+            Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
+            %strong (3/5)
+
+        %hr
+
+        %article.review
+          %p
+            %a Johanna:
+            Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
+            %strong (3/5)
+
+
+      .small-4.columns.farm-details
+        %h2
+          Mary's little lamb
+
+        %br
+        Sesamstraße 1
+        %br
+        12345 Sim City
+        %br
+        Wonderland
+
