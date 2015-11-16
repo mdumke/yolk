@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'application#welcome'
 
-  get 'ui(/:action)', to: 'ui'
+  get 'ui(/:action)', controller: 'ui'
 end
 
