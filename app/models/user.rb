@@ -9,5 +9,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :password, presence: true, confirmation: true
   validates :power_animal, presence: true
+
+  def full_name
+    [first_name, last_name].join(' ')
+  end
 end
 

@@ -8,5 +8,12 @@ describe User, type: :model do
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_presence_of(:password) }
   it { is_expected.to validate_presence_of(:power_animal) }
+
+  describe '#full_name' do
+    it 'returns the concatenation of first and last name' do
+      alice = build(:user, first_name: 'Alice', last_name: 'Malice')
+      expect(alice.full_name).to eq 'Alice Malice'
+    end
+  end
 end
 
