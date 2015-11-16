@@ -1,0 +1,83 @@
+%nav
+  .row
+    .small-12.medium-10.medium-centered.columns.full-width
+      .left
+        .logo
+          yolk
+        .yolk
+
+      .right
+        %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} Hypochonder
+        %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+          %li
+            %a{:href => "#"} profile (edit)
+          %li
+            %a{:href => "#"} logout
+
+.row
+  .small-12.medium-10.medium-centered.columns.main-container.full-width
+    .row
+      .small-8.columns
+        %header.double-border-bottom
+          %h2
+            Latest Reviews
+
+        %article.review
+          %p.headline
+            %a Johanna
+            has reviewed
+            %a Farmzilla
+
+          %p
+            %strong Rating:
+            3
+
+          %p
+            Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
+
+        %hr
+
+        %article.review
+          %p.headline
+            %a Johanna
+            has reviewed
+            %a Farmzilla
+
+          %p
+            %strong Rating:
+            3
+
+          %p
+            Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
+
+        %hr
+
+        %article.review
+          %p.headline
+            %a Johanna
+            has reviewed
+            %a Farmzilla
+
+          %p
+            %strong Rating:
+            3
+
+          %p
+            Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
+
+      .small-4.columns.show-left-border
+        %h3 Write a review for one of these farms:
+
+        %ul.farm-list
+          %li
+            %a Johnny's Farm
+          %li
+            %a Mary's Little Lamb
+          %li
+            %a Walters Bauernhof
+          %li
+            %a Funny Family Farm
+
+        %a.ybtn.full-width
+          + Add another Farm
+

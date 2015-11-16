@@ -16,6 +16,9 @@ h3
   @extend h2
   font-size: 140%
 
+ul
+  list-style-type: none
+
 a:hover
   text-decoration: none
 
@@ -24,8 +27,14 @@ a:hover
 
 .show-left-border
   border-left: 1px solid #ccc
+  padding-bottom: 15px
 
-.farm-container
+.double-border-bottom
+  padding-bottom: 15px
+  margin-bottom: 20px
+  border-bottom: 5px double #ccc
+
+.main-container
   padding-top: 15px
   background-color: white
 
@@ -52,17 +61,16 @@ a:hover
   a
     color: white
     margin-top: 30px
-  a:hover
-    color: white
+
+    &:hover
+      color: white
+
   .ybtn
     margin-top: 40px
     margin-bottom: 15px
 
 .ybtn
-  a
-    color: white
-    text-decoration: none
-
+  text-decoration: none
   color: white
   border: 1px solid #7b0000
   margin: 0 0 6px 0
@@ -75,6 +83,9 @@ a:hover
   display: inline-block
   background-image: -webkit-linear-gradient(#be0100 4%, #a20000 5%, #7c0000 100%)
   background-image: linear-gradient(#be0100 4%, #a20000 5%, #7c0000 100%)
+
+  &:hover
+    color: white
 
 .light
   background-image: -webkit-linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04 100%)
