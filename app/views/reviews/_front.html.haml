@@ -1,0 +1,16 @@
+%h3
+  Featured Review
+
+%p
+  = link_to review.reviewer.full_name, review.reviewer
+  has reviewed
+  = link_to review.farm.name, review.farm
+
+%p
+  = review.body
+  %em
+    = "(#{review.rating} of 5 points)"
+
+%p
+  = link_to 'see more reviews', reviews_path
+

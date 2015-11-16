@@ -1,6 +1,22 @@
-%h1
-  Yolk
+.row
+  .small-8.columns.farm-list
+    %section.create-account-box
+      %h3
+        Yolk is the best way to learn about your local farms
+      %p
+        People use Yolk to learn about the farms that produce their food, from corn to milk.
+        %br
+        What will you find out about the eggs you have for breakfast?
 
-%p
-  is about to come
+      %a.ybtn.light{href: sign_up_path}
+        Create Your Free Account
+
+    %section.farms
+      %header
+        %h2 Check out these farms!
+
+      = render partial: 'farms/front', collection: @farms, as: :farm, spacer_template: 'shared/hr'
+
+  .small-4.columns.featured-review.show-left-border
+    = render partial: 'reviews/front', locals: {review: @review}
 

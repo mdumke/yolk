@@ -1,0 +1,13 @@
+%article.farm
+  %h3
+    =link_to farm.name, farm
+
+  %p
+    - user = farm.reviews.first.reviewer
+    = link_to user.full_name, user
+    says:
+    = farm.reviews.first.body
+
+    %em
+      = "(#{farm.reviews.first.rating} of 5 points)"
+
