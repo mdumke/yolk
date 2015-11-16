@@ -4,7 +4,6 @@
       .left
         .logo
           yolk
-        .yolk
 
       .right
         %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} Hypochonder
@@ -18,7 +17,20 @@
   .small-12.medium-10.medium-centered.columns.main-container.full-width
     .row
       .small-8.columns
-        %header.form-box.double-border-bottom
+        %article
+          %h2
+            Mary's little lamb
+
+          %br
+          Sesamstraße 1
+          %br
+          12345 Sim City
+          %br
+          Wonderland
+
+        %hr
+
+        %article.form-box
           %h2
             Add a review
 
@@ -45,6 +57,7 @@
 
             %input.ybtn.full-width{type: 'submit', value: 'Create Review'}
 
+      .small-4.columns
         %h2
           Here's what other people have said about
           %a
@@ -72,16 +85,4 @@
             %a Johanna:
             Very impressive farm. Huge pice of land, thousands of animals and acres of plantation. Everything and everybody genetically manipulated, though.
             %strong (3/5)
-
-
-      .small-4.columns.farm-details
-        %h2
-          Mary's little lamb
-
-        %br
-        Sesamstraße 1
-        %br
-        12345 Sim City
-        %br
-        Wonderland
 
