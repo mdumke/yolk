@@ -1,0 +1,16 @@
+.row
+  .small-6.small-centered.columns
+    %header
+      %h2
+        Add a new Farm to our list
+
+    = form_for @farm do |f|
+      = render 'shared/errors', model: @farm
+
+      = f.text_field :name, placeholder: 'Farm Name'
+      = f.text_field :street, placeholder: 'Street / Nr'
+      = f.text_field :zip_code, placeholder: 'Zip Code'
+      = f.text_field :city, placeholder: 'City'
+      = f.text_field :country, placeholder: 'Country'
+      = f.submit value: 'Add this Farm', class: 'ybtn full-width'
+
