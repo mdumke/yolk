@@ -6,5 +6,9 @@ class Review < ActiveRecord::Base
   validates :rating,
     presence: true,
     numericality: {only: :integer, greater_than: 0, less_than: 6}
+
+  def self.featured
+    offset(rand(count)).limit(1).first
+  end
 end
 
