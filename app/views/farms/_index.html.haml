@@ -1,0 +1,16 @@
+%article.farm-item
+  .farm-name
+    %h3
+      = link_to farm.name, farm
+    %p
+      Average Rating:
+      = farm.average_rating
+
+    = link_to 'Review this Farm', farm
+
+  .farm-address
+    = farm.street
+    %br
+    = "#{farm.zip_code} #{farm.city}"
+    %br
+    = farm.country

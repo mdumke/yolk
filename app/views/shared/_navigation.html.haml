@@ -5,11 +5,26 @@
         .logo
           = link_to 'yolk', home_path
 
-      .right
-        .sign-up
-          %a.ybtn{href: sign_up_path}
-            Sign Up
-        .sign-in
-          %a{href: sign_in_path}
-            Log In
+      - if logged_in?
+        .right.nav-button
+          %a.ybtn{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"}
+            = current_user.full_name
+            &raquo;
+          %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
+            %li
+              = link_to 'logout', sign_out_path
+
+        .right.nav-button
+          = link_to 'Add new Farm', new_farm_path, class: 'ybtn'
+        .right.nav-option
+          = link_to 'Reviews', reviews_path
+        .right.nav-option
+          = link_to 'Farms', home_path
+
+      - else
+        .right
+          .sign-up
+            = link_to 'Sign Up', sign_up_path, class: 'ybtn'
+          .sign-in
+            = link_to 'Log In', sign_in_path
 

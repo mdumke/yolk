@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'sign_up', controller: 'users', action: 'new'
   post 'sign_up', controller: 'users', action: 'create'
   post 'sign_in', controller: 'sessions', action: 'create'
+  get 'sign_out', controller: 'sessions', action: 'destroy'
 
   resources :farms, only: [:new, :create, :show]
   resources :users, only: [:show, :create]
