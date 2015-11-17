@@ -38,5 +38,24 @@ describe Farm do
       expect(farm.average_rating).to eq(2.3)
     end
   end
+
+  describe '#recent_reviews' do
+    let(:farm) { create(:farm) }
+
+    it 'returns an empty array if there is no recent review' do
+      expect(farm.recent_reviews).to eq []
+    end
+
+    it 'returns the last reviews ordered by descenting creation date' do
+      review1 = create(:review, farm: farm, created_at: 2.days.ago)
+      review2 = create(:review, farm: farm)
+      expect(farm.recent_reviews).to eq([review2, review1])
+    end
+
+    it 'returns only the last 5 reviews' do
+      6.times { create(:review, farm: farm) }
+      expect(farm.recent_reviews.count).to eq(5)
+    end
+  end
 end
 

@@ -16,5 +16,9 @@ class Farm < ActiveRecord::Base
     return 0 if reviews.empty?
     (reviews.map(&:rating).sum / reviews.count.to_f).round(1)
   end
+
+  def recent_reviews
+    reviews.order('created_at desc').limit(5)
+  end
 end
 
