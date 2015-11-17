@@ -1,0 +1,11 @@
+.row
+  .small-12.medium-10.medium-centered-columns.full-width
+    - if flash[:error]
+      .alert-box.alert.flash.radius{"data-alert" => ""}
+        = flash[:error]
+        %a.close{:href => "#"} ×
+
+    - if flash[:notice]
+      .alert-box.success.flash.radius{"data-alert" => ""}
+        = flash[:notice]
+        %a.close{:href => "#"} ×

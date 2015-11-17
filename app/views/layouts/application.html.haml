@@ -13,20 +13,8 @@
     %link{href: 'https://fonts.googleapis.com/css?family=Pacifico', rel: 'stylesheet', type: 'text/css'}
 
   %body
-    %nav
-      .row
-        .small-12.medium-10.medium-centered.columns.full-width
-          .left
-            .logo
-              = link_to 'yolk', home_path
-
-          .right
-            .sign-up
-              %a.ybtn{href: sign_up_path}
-                Sign Up
-            .sign-in
-              %a{href: sign_in_path}
-                Log In
+    = render 'shared/navigation'
+    = render 'shared/flash'
 
     .row
       .small-12.medium-10.medium-centered.columns.main-container.full-width
