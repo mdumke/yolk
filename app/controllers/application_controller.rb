@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def welcome
-    @farms = Farm.recent
+    @farms = Farm.reviewed.recent
     @review = Review.featured
   end
 

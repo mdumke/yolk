@@ -1,0 +1,6 @@
+%article.review
+  %p
+    = link_to review.reviewer.full_name, review.reviewer
+    = review.body
+    %strong
+      = "(#{review.rating}/5)"

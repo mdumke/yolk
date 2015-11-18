@@ -1,0 +1,50 @@
+.row
+  .small-8.columns
+    %article
+      %h2= @farm.name
+
+      %br
+      = @farm.street
+      %br
+      = "#{@farm.zip_code} #{@farm.city}"
+      %br
+      = @farm.country
+
+    %hr
+
+    %article.form-box
+      %h2
+        Add a review
+
+      = form_for @review, url: review_farm_path(@farm) do |f|
+        = render 'shared/errors', model: @review
+
+        = f.label 'Rating'
+        = f.radio_button :rating, 1
+        = f.label :rating, 1
+        = f.radio_button :rating, 2
+        = f.label :rating, 2
+        = f.radio_button :rating, 3
+        = f.label :rating, 3
+        = f.radio_button :rating, 4
+        = f.label :rating, 4
+        = f.radio_button :rating, 5
+        = f.label :rating, 5
+
+        = f.label 'Review'
+        = f.text_area :body, placeholder: "Tell us what you think about #{@farm.name}", rows: 6
+
+        = f.submit value: 'Create Review', class: 'ybtn full-width'
+
+  .small-4.columns
+    %h2= "Here's what other people have said about #{@farm.name}:"
+
+    %br
+
+    - if @farm.reviews.any?
+      = render partial: 'reviews/on_farm_page',
+               collection: @farm.recent_reviews,
+               as: :review,
+               spacer_template: 'shared/hr'
+    - else
+      %p No reviews for this farm yet. Be the first to write a review!
