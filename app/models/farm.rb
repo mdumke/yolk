@@ -12,6 +12,10 @@ class Farm < ActiveRecord::Base
     limit(5).order('created_at desc')
   end
 
+  def self.reviewed
+    joins(:reviews).distinct
+  end
+
   def average_rating
     return 0 if reviews.empty?
     (reviews.map(&:rating).sum / reviews.count.to_f).round(1)

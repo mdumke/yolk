@@ -26,6 +26,14 @@ describe Farm do
     end
   end
 
+  describe '.reviewed' do
+    it 'returns only the farms that have at least one review' do
+      farm1 = create(:farm, reviews: [create(:review)])
+      farm2 = create(:farm)
+      expect(Farm.reviewed.to_a).to eq([farm1])
+    end
+  end
+
   describe '#average_rating' do
     let(:farm) { build(:farm) }
 
