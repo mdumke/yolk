@@ -1,6 +1,32 @@
 require 'spec_helper'
 
 describe UsersController do
+  describe 'GET show' do
+    it 'sets @user' do
+      login
+      alice = create(:user)
+      review = create(:review, reviewer: alice)
+      get :show, id: alice.id
+      expect(assigns(:user)).to eq(alice)
+    end
+
+    it 'redirects when the user is not found' do
+      login
+      get :show, id: current_user.id + 10
+      expect(response).to redirect_to home_path
+    end
+
+    it 'sets the error flash when the user is not found' do
+      login
+      get :show, id: current_user.id + 10
+      expect(flash[:error]).to be_present
+    end
+
+    it_behaves_like 'requires authenticated user' do
+      let(:action) { get :show, id: 1 }
+    end
+  end
+
   describe 'GET new' do
     it 'sets a new user variable' do
       get :new

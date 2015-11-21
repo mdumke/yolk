@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :require_user, only: [:show]
+  before_action :set_user, only: [:show]
+
+  def show
+  end
+
   def new
     @user = User.new
   end
@@ -17,6 +23,15 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find_by_id(params[:id])
+
+    unless @user
+      flash[:error] = 'This user is not in our system.'
+      redirect_to home_path
+    end
+  end
 
   def user_params
     params.require(:user).permit(

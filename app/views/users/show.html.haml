@@ -1,0 +1,23 @@
+%header.double-border-bottom
+  %h2= @user.full_name
+
+  %ul.no-bullet
+    %li= "Yolking since #{@user.created_at.to_date}"
+    %li= "Power Animal: #{@user.power_animal.titleize}"
+
+- if @user.reviews.any?
+  %h3= "#{@user.first_name}'s reviews:"
+
+  - @user.reviews.each do |review|
+    %article
+      %p
+        = link_to review.farm.name, review.farm
+        = "(#{review.rating} / 5)"
+      %p
+        = review.body
+
+    %hr
+
+- else
+  %p= "#{@user.first_name} does not have any reviews yet"
+

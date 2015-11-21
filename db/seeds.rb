@@ -1,7 +1,7 @@
 power_animals = ['Sloth', 'Panda', 'Giraffe', 'Mule', 'Butterfly']
 farm_names = ["Mary's Little Lamb", "Walter's Vogelweide",
               "Fat Ugly Pig Farm", "Bernds Bauernhof",
-              "Johnny's Family Farm"]
+              "Johnny's Family Farm", "Animal Farm"]
 
 puts 'create users'
 
