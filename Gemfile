@@ -15,6 +15,8 @@ gem 'haml-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'ffaker'
+
 group :deverlopment do
   gem 'thin'
   gem 'better_errors'
@@ -26,7 +28,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   gem 'factory_girl_rails'
-  gem 'ffaker'
 
   gem 'spring'
   gem 'rspec-rails'
