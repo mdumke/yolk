@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe SessionsController do
+  describe 'GET new' do
+    it 'redirects logged in users to the home path' do
+      login
+      get :new
+      expect(response).to redirect_to home_path
+    end
+  end
+
   describe 'POST create' do
     let!(:user) { create(:user) }
 

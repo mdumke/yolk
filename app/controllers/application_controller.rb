@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
+  before_action :redirect_logged_in_users, only: [:welcome]
 
   def welcome
     @farms = Farm.reviewed.recent
@@ -20,5 +21,9 @@ class ApplicationController < ActionController::Base
       flash[:error] = 'Access restricted to authenticated users'
       redirect_to root_path
     end
+  end
+
+  def redirect_logged_in_users
+    redirect_to home_path if logged_in?
   end
 end

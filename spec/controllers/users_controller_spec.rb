@@ -32,6 +32,12 @@ describe UsersController do
       get :new
       expect(assigns(:user)).to be_a_new_record
     end
+
+    it 'redirects logged in users to the home path' do
+      login
+      get :new
+      expect(response).to redirect_to home_path
+    end
   end
 
   describe 'POST create' do
@@ -43,7 +49,7 @@ describe UsersController do
       end
 
       it 'redirects to the home_path' do
-        expect(response).to redirect_to home_path
+       expect(response).to redirect_to home_path
       end
 
       it 'sets the flash notice' do
