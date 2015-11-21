@@ -3,8 +3,10 @@
     %h2.double-border-bottom
       These are our great farms:
 
-    = render partial: 'farms/index', collection: @farms, as: :farm, spacer_template: 'shared/hr'
+    - if @farms
+      = render partial: 'farms/index', collection: @farms, as: :farm, spacer_template: 'shared/hr'
 
   .small-4.columns.featured-review.show-left-border
-    = render partial: 'reviews/front', locals: {review: @review}
+    - if @review
+      = render partial: 'reviews/front', locals: {review: @review}
 
