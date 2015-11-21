@@ -1,0 +1,11 @@
+%article.review
+  %p.headline
+    = link_to review.reviewer.first_name, review.reviewer
+    has reviewed
+    = link_to review.farm.name, review.farm
+
+  %p
+    %strong= "Rating: #{review.rating}"
+
+  %p= review.body
+

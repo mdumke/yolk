@@ -1,0 +1,17 @@
+.row
+  .small-8.columns
+    %header.double-border-bottom
+      %h2
+        Latest Reviews
+
+    = render partial: 'review', collection: @reviews, spacer_template: 'shared/hr'
+
+  .small-4.columns.show-left-border
+    %h3 Write a review for one of these farms:
+
+    %ul.no-bullets.farm-list
+      - @farms.each do |farm|
+        %li
+          =link_to farm.name, farm
+
+    = link_to '+ Add another Farm', new_farm_path, class: 'ybtn full-width'
