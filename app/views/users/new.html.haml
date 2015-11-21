@@ -8,11 +8,12 @@
 
       = render 'shared/errors', model: @user
 
-      = f.text_field :first_name, placeholder: 'First Name'
-      = f.text_field :last_name, placeholder: 'Last Name'
-      = f.text_field :power_animal, placeholder: 'Power Animal, e.g. Zebra'
-      = f.email_field :email
-      = f.password_field :password
+      = f.text_field :first_name, placeholder: 'First Name*', required: true
+      = f.text_field :last_name, placeholder: 'Last Name*', required: true
+      = f.text_field :power_animal, placeholder: 'Power Animal, e.g. Zebra*', required: true
+      = f.email_field :email, placeholder: 'Email Address*', required: true
+      = f.password_field :password, placeholder: 'Password*', required: true
+
 
       %p.sign-up-legal
         By creating an account, you agree to Yelp’s (!)
