@@ -8,15 +8,10 @@
 - if @user.reviews.any?
   %h3= "#{@user.first_name}'s reviews:"
 
-  - @user.reviews.each do |review|
-    %article
-      %p
-        = link_to review.farm.name, review.farm
-        = "(#{review.rating} / 5)"
-      %p
-        = review.body
-
-    %hr
+  = render partial: 'reviews/on_user_page',
+           collection: @user.reviews,
+           as: :review,
+           spacer_template: 'shared/hr'
 
 - else
   %p= "#{@user.first_name} does not have any reviews yet"
