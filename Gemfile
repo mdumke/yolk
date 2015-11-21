@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 
 gem 'jquery-rails'
-gem 'foundation-rails'
+gem 'foundation-rails', '= 5.5.2.1'
 gem 'haml-rails'
 
 gem 'bcrypt', '~> 3.1.7'

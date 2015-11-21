@@ -254,7 +254,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   ffaker
-  foundation-rails
+  foundation-rails (= 5.5.2.1)
   guard-rspec
   haml-rails
   jquery-rails
