@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome back, #{user.first_name}!"
+      flash[:notice] = "Welcome back, #{user.full_name}!"
       redirect_to home_path
     else
       flash[:error] = "Something is wrong with your email or password"
