@@ -3,7 +3,7 @@
     .small-12.medium-10.medium-centered.columns.full-width
       .left
         .logo
-          = link_to 'yolk', home_path
+          = link_to 'yolk', logged_in? ? home_path : sign_up_path
 
       - if logged_in?
         .right.nav-button
@@ -16,6 +16,8 @@
 
         .right.nav-button
           = link_to 'Add new Farm', new_farm_path, class: 'ybtn'
+        .right.nav-option
+          = link_to 'My Reviews', current_user
         .right.nav-option
           = link_to 'Reviews', reviews_path
         .right.nav-option
