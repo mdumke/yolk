@@ -1,10 +1,9 @@
 %article.farm
-  %h3
-    =link_to farm.name, farm
+  %h3= farm.name
 
   %p
     - user = farm.reviews.first.reviewer
-    = link_to user.full_name, user
+    %strong= user.full_name
     says:
     = farm.reviews.first.body
 

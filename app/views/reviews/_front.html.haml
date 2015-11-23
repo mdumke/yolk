@@ -2,9 +2,9 @@
   Featured Review
 
 %p
-  = link_to review.reviewer.full_name, review.reviewer
+  %strong= review.reviewer.full_name
   has reviewed
-  = link_to review.farm.name, review.farm
+  %strong= review.farm.name
 
 %p
   = review.body
@@ -12,5 +12,5 @@
     = "(#{review.rating} of 5 points)"
 
 %p
-  = link_to 'see more reviews', reviews_path
+  = link_to 'see more reviews', sign_up_path
 
