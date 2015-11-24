@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome back, #{user.full_name}!"
       redirect_to home_path
     else
-      flash[:error] = "Something is wrong with your email or password"
+      flash.now[:error] = "Something is wrong with your email or password"
       render 'new'
     end
   end

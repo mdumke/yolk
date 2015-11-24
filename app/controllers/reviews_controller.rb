@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Thank you for reviewing #{@review.farm.name}!"
       redirect_to @review.farm
     else
-      flash[:error] = "Something went wrong. Please review your review."
+      flash.now[:error] = "Something went wrong. Please review your review."
       render 'farms/show'
     end
   end

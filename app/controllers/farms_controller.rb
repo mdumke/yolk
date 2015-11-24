@@ -22,7 +22,7 @@ class FarmsController < ApplicationController
       flash[:notice] = "#{@farm.name} was added!"
       redirect_to @farm
     else
-      flash[:error] = 'The data was not sufficient to create the farm'
+      flash.now[:error] = 'The data was not sufficient to create the farm'
       render 'new'
     end
   end

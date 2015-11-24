@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome #{@user.first_name}! Your account was created!"
       redirect_to home_path
     else
-      flash[:error] = 'Something prevented us from creating your account'
+      flash.now[:error] = 'Something prevented us from creating your account'
       render 'new'
     end
   end
