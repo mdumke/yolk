@@ -9,6 +9,14 @@ feature 'create a new farm and review it' do
 
     create_a_review
     expect_review_to_be_created
+    expect_to_receive_a_creation_message
+
+    visit reviews_path
+    expect_to_see_new_review
+  end
+
+  def expect_to_see_new_review
+    expect(page).to have_content('Nice Farm')
   end
 
   def create_a_new_farm
@@ -33,6 +41,10 @@ feature 'create a new farm and review it' do
 
   def expect_review_to_be_created
     expect(Review.count).to eq(1)
+  end
+
+  def expect_to_receive_a_creation_message
+    expect(page).to have_content 'Thank you for reviewing'
   end
 end
 

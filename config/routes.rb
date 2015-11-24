@@ -8,12 +8,9 @@ Rails.application.routes.draw do
   post 'sign_in',  controller: 'sessions', action: 'create'
   get  'sign_out', controller: 'sessions', action: 'destroy'
 
-  resources :farms, only: [:show, :new, :create] do
-    post 'review', on: :member
-  end
-
+  resources :farms, only: [:show, :new, :create]
   resources :users, only: [:show, :create]
-  resources :reviews, only: [:index]
+  resources :reviews, only: [:index, :create]
 
   get 'ui(/:action)', controller: 'ui'
 end

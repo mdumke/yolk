@@ -27,20 +27,6 @@ class FarmsController < ApplicationController
     end
   end
 
-  def review
-    @review = Review.new(review_params)
-    @review.farm = @farm
-    @review.reviewer = current_user
-
-    if @review.save
-      flash[:notice] = "Thank you for reviewing #{@farm.name}!"
-      redirect_to @farm
-    else
-      flash[:error] = "Something went wrong. Please review your review."
-      render 'show'
-    end
-  end
-
   private
 
   def set_farm
@@ -55,10 +41,6 @@ class FarmsController < ApplicationController
   def farm_params
     params.require(:farm).permit(
       :name, :street, :zip_code, :city, :country)
-  end
-
-  def review_params
-    params.require(:review).permit(:rating, :body)
   end
 end
 
